@@ -1,0 +1,18 @@
+{
+	"pluginId": "vs.language.ino",
+	"activationEvents": ["textModel:ino"],
+	"mainModule": "./out/inoMain",
+	"contributes": {
+		"language": [{
+			"id": "ino",
+			"extensions": [ ".cpp", ".c", ".cc", ".cxx", ".h", ".hpp", ".hh", ".hxx", ".ino" ],
+			"aliases": [ "C++", "Cpp", "cpp", "c" ]
+		}]
+	},
+	"scripts": {
+		"compile": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../../gulpfile.plugins.js compile-plugin:vs.language.ino"
+	},
+	"_bundling": [
+		{ "name": "./out/inoMain" }
+	]
+}
