@@ -85,6 +85,7 @@ From *Visual Studio Code*, do the following:
 5. Select *Configure Task Runner*. This will create a hidden folder named *.vscode* at
 the root of the *arduino* projects folder selected in *step 2*. ![command palette](/pics/ConfigureTaskRunner.png)
 6. Replace *.vscode/tasks.json* with *~/VisualStudioCodeArduino/tasks.json*.
+7. Restart *Visual Studio Code*
 
 The configuration of *Visual Studio Code* is now complete and it is ready for use with *arduino* 
 *.ino* project files.
