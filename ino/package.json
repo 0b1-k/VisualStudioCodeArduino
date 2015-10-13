@@ -1,0 +1,22 @@
+{
+	"name": "ino",
+	"version": "0.1.0",
+	"publisher": "vscode",
+	"engines": { "vscode": "*" },
+	"activationEvents": ["onLanguage:ino"],
+	"main": "./out/inoMain",
+	"contributes": {
+		"languages": [{
+			"id": "ino",
+			"extensions": [ ".ino", ".cpp", ".c", ".cc", ".cxx", ".h", ".hpp", ".hh", ".hxx" ],
+			"aliases": [ "C++", "Cpp", "cpp", "c" ]
+		}]
+	},
+	"isAMD": true,
+	"scripts": {
+		"vscode:prepublish": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../../gulpfile.plugins.js compile-plugin:ino"
+	},
+	"_bundling": [
+		{ "name": "./out/inoMain" }
+	]
+}
