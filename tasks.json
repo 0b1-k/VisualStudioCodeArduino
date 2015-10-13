@@ -48,7 +48,7 @@
 		{
 			"taskName": "--upload",
 			"args": ["-v", "${file}"],
-			"isBuildCommand": false,
+			"isTestCommand": true,
 			"showOutput": "always"
 		}	
 	]
