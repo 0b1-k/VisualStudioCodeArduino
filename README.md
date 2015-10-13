@@ -29,11 +29,11 @@ environment so that it can be accessed from anywhere. It is assumed that the
 ~/arduino-1.6.4
 ```
 
-Switch to the */usr/bin* folder and create a symbolic link named *arduino* pointing to
+Switch to the */usr/local/bin* folder and create a symbolic link named *arduino* pointing to
 the *arduino* installation folder.
 
 ```
-cd /usr/bin
+cd /usr/local/bin
 sudo ln -s ~/arduino-1.6.4/arduino arduino
 ```
 
@@ -47,31 +47,28 @@ arduino
 
 On Windows, just ensure that the *arduino* environment is part of the PATH.
 
-## 2. Copy the *vs.language.ino* folder to the *Visual Studio Code* plugins folder
+## 2. Copy the *ino* folder to your local *Visual Studio Code* extension folder
 
-The *vs.language.ino* folder in this repository provides *Visual Studio Code* with the 
+The *ino* folder in this repository provides *Visual Studio Code* with the 
 *arduino* keyword definitions needed for syntax highlighting. It also specifies that 
 *.ino* files should be handled as C/C++ files.
-
-The commands assume that *Visual Studio Code* was installed in the user's */home* folder.
-It is also assumed that the *Visual Studio Code for Arduino* repository was cloned 
-to the user's */home* folder. 
 
 The repository contains the following files & folders:
 
 ```
+drwxr-xr-x 3 fabien fabien 4096 Oct 13 09:43 ino
 -rw-rw-r-- 1 fabien fabien 7652 Oct  1 18:05 LICENSE
-drwxrwxr-x 2 fabien fabien 4096 Oct  2 17:07 pics
--rw-rw-r-- 1 fabien fabien 3787 Oct  2 17:30 README.md
--rw-rw-r-- 1 fabien fabien 1999 Oct  2 13:06 tasks.json
-drwxr-xr-x 3 fabien fabien 4096 Oct  2 13:49 vs.language.ino
+drwxrwxr-x 2 fabien fabien 4096 Oct  2 18:45 pics
+-rw-rw-r-- 1 fabien fabien 4605 Oct 13 09:43 README.md
+-rw-rw-r-- 1 fabien fabien 1997 Oct 13 08:43 tasks.json
 ```
 
-Copy *vs.language.ino* to *Visual Studio Code*'s plugins folder with your file manager or
-the following command:
+Copy the *ino* folder to the hidden *.vscode/extensions* folder that 
+*Visual Studio Code* created at the root of your *home* folder the first time it was
+started.
 
 ```
-cp -r ~/VisualStudioCodeArduino/vs.language.ino ~/VSCode-linux-x64/resources/app/plugins
+cp -r ~/VisualStudioCodeArduino/ino ~/.vscode/extensions
 ```
 
 ## 3. Adding the *Visual Studio Code* *Task Runners* supporting *arduino*
@@ -118,7 +115,7 @@ show the complete, verbose, compilation results.
 
 ![compile output](/pics/compilex600.png)
 
-Select *--upload* to verify/compile & upload the *arduino* sketch to the target board.
+Select *--upload* or Shift+Ctrl+T to verify/compile & upload the *arduino* sketch to the target board.
 This will always bring up the output.
 
 ![upload output](/pics/uploadx600.png)
@@ -135,4 +132,4 @@ This procedure has been validated to work with the following configuration:
 
 * *Ubuntu Linux 14.04 LTS*
 * *arduino 1.6.4*
-* *Visual Studio Code 0.8.0*
+* *Visual Studio Code 0.9.x*
